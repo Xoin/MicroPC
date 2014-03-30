@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroPC", "MicroPC\MicroPC.csproj", "{50C9058B-139E-46F4-BBFB-AFDDDF848353}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroCompiler", "MicroCompiler\MicroCompiler.csproj", "{A66CF05A-462A-468F-8D1D-2F75E4DF1F94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroCore", "MicroCore\MicroCore.csproj", "{CC1600BF-B958-4EF8-B05D-74A91F82C83F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroAPI", "MicroAPI\MicroAPI.csproj", "{F1385954-FC34-4239-A954-3A882C20CF0E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50C9058B-139E-46F4-BBFB-AFDDDF848353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50C9058B-139E-46F4-BBFB-AFDDDF848353}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50C9058B-139E-46F4-BBFB-AFDDDF848353}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50C9058B-139E-46F4-BBFB-AFDDDF848353}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A66CF05A-462A-468F-8D1D-2F75E4DF1F94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A66CF05A-462A-468F-8D1D-2F75E4DF1F94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A66CF05A-462A-468F-8D1D-2F75E4DF1F94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A66CF05A-462A-468F-8D1D-2F75E4DF1F94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC1600BF-B958-4EF8-B05D-74A91F82C83F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC1600BF-B958-4EF8-B05D-74A91F82C83F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC1600BF-B958-4EF8-B05D-74A91F82C83F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC1600BF-B958-4EF8-B05D-74A91F82C83F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1385954-FC34-4239-A954-3A882C20CF0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1385954-FC34-4239-A954-3A882C20CF0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1385954-FC34-4239-A954-3A882C20CF0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1385954-FC34-4239-A954-3A882C20CF0E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
