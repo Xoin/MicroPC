@@ -61,7 +61,7 @@ namespace MicroCore
         {
             OpDict.Add("mov", 0x00);
             OpDict.Add("load", 0x01);
-            OpDict.Add("storei", 0x02);
+            OpDict.Add("write", 0x02);
             OpDict.Add("inc", 0x03);
             OpDict.Add("dec", 0x04);
             OpDict.Add("store", 0x05);

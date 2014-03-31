@@ -11,36 +11,64 @@ namespace MicroAPI
     {
         public static void Execute(byte service)
         {
+            // Main API
             if (service == 1)
             {
                 byte mem = 0x00;
                 switch (Register.Read(0))
                 {
+                    // Read starting point in ram from R1, print to console
                     case 1:
-                        for (int x = Register.Read(1); x < RAM.ram.Length; x++)
-                        {
-                            mem = RAM.ram[x];
-                            if (mem == 0x24)
-                            {
-                                Console.Write("\n");
-                                x = RAM.ram.Length + 1;
-                            }
-                            else
-                            {
-                                Console.Write(ByteConvert.GetString(mem));
-                            }
-                        }
+                        Console.Write(ReturnString(1));
                         break;
+                    // Write  char in R3 to console
                     case 2:
                         mem = Register.Read(2);
                         Console.Write(ByteConvert.GetString(mem).ToLower());
                         break;
+                    // Read input char and write to R3
                     case 3:
                         string key = Console.ReadKey(true).Key.ToString();
-                        Register.Write(3, ByteConvert.GetByte(key));
+                        Register.Write(2, ByteConvert.GetByte(key));
                         break;
+                    // from position till terminated and then read from another position till terminated to compare strings
+                    case 4:
+                        string first = ReturnString(1);
+                        string second = ReturnString(2);
+                        if (first == second)
+                        {
+                            Register.Write(3, 0x01);
+                        }
+                        else
+                        {
+                            Register.Write(3, 0x00);
+                        }
+                        break;
+
+                }
+
+
+            }
+
+        }
+
+        public static string ReturnString(int register)
+        {
+            string result = "";
+            for (int x = Register.Read(register); x < RAM.ram.Length; x++)
+            {
+                byte mem = RAM.ram[x];
+                if (mem == 0x24)
+                {
+                    Console.Write("\n");
+                    x = RAM.ram.Length + 1;
+                }
+                else
+                {
+                    result += ByteConvert.GetString(mem);
                 }
             }
+            return result;
         }
     }
 }

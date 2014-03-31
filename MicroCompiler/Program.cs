@@ -10,7 +10,7 @@ namespace MicroCompiler
     {
         static void Main(string[] args)
         {
-            Assembler.Compile("bios.asm",256);
+            Assembler.Compile("misctests.asm",128);
             Console.ReadLine();
         }
     }

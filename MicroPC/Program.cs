@@ -13,7 +13,7 @@ namespace MicroPC
         {
             Datasheet.Innit();
             ByteConvert.Innit();
-            RAM.Load("bios.MPX");
+            RAM.Load("misctests.MPX");
             CPU.Run();
             IO.Display.Debug();
             Console.ReadLine();
