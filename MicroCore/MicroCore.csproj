@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FAT.cs" />
     <Compile Include="MicroCore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

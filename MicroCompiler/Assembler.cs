@@ -112,19 +112,12 @@ namespace MicroCompiler
                             // Hex: 0x02
                             // Desc: Writes a value from a register to a location in memory
                             // Arg1: Register
-                            // Arg2: Register or location by hand
+                            // Arg2: Register
                             case 2:
                                 passes++;
                                 rom[passes] = Datasheet.GetByte(line[1]);
                                 passes++;
-                                if (line[2].Contains("R") == true)
-                                {
-                                    rom[passes] = Datasheet.GetByte(line[2]);
-                                }
-                                else
-                                {
-                                    rom[passes] = (byte)Int32.Parse(line[2]);
-                                }
+                                rom[passes] = Datasheet.GetByte(line[2]);
                                 passes++;
                                 break;
 
@@ -170,9 +163,9 @@ namespace MicroCompiler
                             // Arg2: N/A
                             case 6:
                                 passes++;
-                                if (labels.ContainsKey(line[2]) == true)
+                                if (labels.ContainsKey(line[1]) == true)
                                 {
-                                    rom[passes] = (byte)(labels[line[2]]);
+                                    rom[passes] = (byte)(labels[line[1]]);
                                 }
                                 passes++;
                                 break;

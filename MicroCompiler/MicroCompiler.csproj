@@ -48,6 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Content Include="asm\dos.asm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MicroCore\MicroCore.csproj">
@@ -56,19 +59,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bios.asm">
+    <Content Include="asm\bios.asm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="helloworld.asm">
+    <Content Include="asm\helloworld.asm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="misctests.asm">
+    <Content Include="asm\misctests.asm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="stringcompare.asm">
+    <Content Include="asm\stringcompare.asm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="test.asm">
+    <Content Include="asm\test.asm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

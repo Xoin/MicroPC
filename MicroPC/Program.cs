@@ -13,9 +13,9 @@ namespace MicroPC
         {
             Datasheet.Innit();
             ByteConvert.Innit();
-            RAM.Load("misctests.MPX");
+            RAM.Load("dos.MPX");
             CPU.Run();
-            IO.Display.Debug();
+            
             Console.ReadLine();
         }
     }

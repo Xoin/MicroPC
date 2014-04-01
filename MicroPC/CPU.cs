@@ -21,7 +21,6 @@ namespace MicroPC
                 byte target2 = 0;
                 byte data = 0;
                 int data2 = 0;
-
                 switch (RAM.ram[i])
                 {
 
@@ -64,7 +63,9 @@ namespace MicroPC
                         target= RAM.ram[i];
                         dest = RegisterTraget(target);
                         i++;
-                        RAM.ram[i] = Register.Read(dest);
+                        target2= RAM.ram[i];
+                        dest2 = RegisterTraget(target2);
+                        RAM.Write(Register.Read(dest2), Register.Read(dest));
                         break;
 
                     // Name: inc

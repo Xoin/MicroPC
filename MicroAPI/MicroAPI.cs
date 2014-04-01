@@ -21,15 +21,22 @@ namespace MicroAPI
                     case 1:
                         Console.Write(ReturnString(1));
                         break;
-                    // Write  char in R3 to console
+                    // Write  char in R1 to console
                     case 2:
-                        mem = Register.Read(2);
-                        Console.Write(ByteConvert.GetString(mem).ToLower());
+                        mem = Register.Read(1);
+                        Console.Write(ByteConvert.GetString(mem));
                         break;
-                    // Read input char and write to R3
+                    // Read input char and write to R1
                     case 3:
                         string key = Console.ReadKey(true).Key.ToString();
-                        Register.Write(2, ByteConvert.GetByte(key));
+                        if (key == "Enter")
+                        {
+                            Register.Write(1, ByteConvert.GetByte("$"));
+                        }
+                        else
+                        {
+                            Register.Write(1, ByteConvert.GetByte(key));
+                        }
                         break;
                     // from position till terminated and then read from another position till terminated to compare strings
                     case 4:

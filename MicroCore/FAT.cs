@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MicroPC
+namespace MicroCore
 {
-    class Disk
+    public class FAT
     {
     }
 }
