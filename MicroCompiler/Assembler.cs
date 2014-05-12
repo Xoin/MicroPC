@@ -285,7 +285,7 @@ namespace MicroCompiler
                     }
                 }
             }
-            FileIO.Write(file.Replace(".asm",".MPX"),rom);
+            FileIO.WriteBytes(file.Replace(".asm",".MPX"),rom);
             foreach (var item in labels)
             {
                 Console.WriteLine(item.Key+" "+item.Value);

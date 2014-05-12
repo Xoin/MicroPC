@@ -12,12 +12,17 @@
 store R0 1
 load R1 welcome
 int 1
+store R0 5
+int 1
 
 ###############################################################################
 #Things we need before starting                                               #
 ###############################################################################
 
 :start
+load R1 command_line
+store R0 1
+int 1
 store R5 1
 store R4 36
 load R3 end
@@ -62,8 +67,19 @@ load R2 end
 store R0 4
 int 1
 jnzero R3 ver
-halt
-#
+
+store R3 0
+#the command we want (lets pretend you have a choice)
+load R1 command_facepunch
+# hey there now to so free RAM!
+load R2 end
+#lets compare
+store R0 4
+int 1
+jnzero R3 facepunch_p
+store R0 5
+int 1
+jump start
 
 ###############################################################################
 # Internal programs                                                           #
@@ -71,24 +87,59 @@ halt
 
 #version program
 :ver
+store R0 5
+int 1
 store R0 1
 load R1 version
 int 1
-jump start
+store R0 5
+int 1
+jump clean
 
-#exit program
-:exit
-halt
+#facepunch program
+:facepunch_p
+store R0 5
+int 1
+store R0 1
+load R1 facepunch
+int 1
+store R0 5
+int 1
+jump clean
+
+# Clean make sure everything is as we started 
+:clean
+load R3 clear
+:cleansub
+load R0 end
+store R1 0
+write R1 R0
+inc R0
+cmp R0 R3 R2
+jnzero R2 cleansub
+store R0 0
+store R1 0
+store R2 0
+store R3 0
+store R4 0
+store R5 0
+jump start
 
 ###############################################################################
 # Strings to use                                                              #
 ###############################################################################
 :welcome
 db "Welcome to MicroDOS$"
+:command_line
+db "> $"
 :version
 db "MicroDOS Version 0.0.1$"
+:facepunch
+db "Hi there Facepunch$"
+:command_facepunch
+db "FACEPUNCH$"
 :command_ver
 db "VER$"
-:command_exit
-db "EXIT$"
 :end
+db "FILLFILLFILLFILL$"
+:clear

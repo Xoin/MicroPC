@@ -65,7 +65,7 @@ namespace MicroPC
                         i++;
                         target2= RAM.ram[i];
                         dest2 = RegisterTraget(target2);
-                        RAM.Write(Register.Read(dest2), Register.Read(dest));
+                        RAM.WriteByte(Register.Read(dest2), Register.Read(dest));
                         break;
 
                     // Name: inc
@@ -115,6 +115,8 @@ namespace MicroPC
                     // Arg1: Label
                     // Arg2: N/A
                     case 6:
+                        i++;
+                        i = (RAM.ram[i] -1);
                         break;
 
                     // Name: jzero

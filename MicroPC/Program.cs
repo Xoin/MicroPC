@@ -11,11 +11,12 @@ namespace MicroPC
     {
         static void Main(string[] args)
         {
+            Console.Title = "";
             Datasheet.Innit();
             ByteConvert.Innit();
             RAM.Load("dos.MPX");
             CPU.Run();
-            
+            IO.Display.Debug();
             Console.ReadLine();
         }
     }

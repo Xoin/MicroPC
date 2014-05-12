@@ -25,19 +25,9 @@ namespace MicroCore
     {
         public static byte[] ram = new byte[128]; //128 min 8192 max?
 
-        public byte Read(int address)
-        {
-            return ram[address];
-        }
-
         public static void Load(string file_l)
         {
             ram = File.ReadAllBytes(file_l);
-        }
-
-        public static void Write(int address, byte data)
-        {
-            ram[address] = data;
         }
 
         public static void Clear()
@@ -47,6 +37,28 @@ namespace MicroCore
                 ram[i] = 0x00;
             }
         }
+
+        public static byte ReadByte(int address)
+        {
+            return ram[address];
+        }
+
+        public static void WriteByte(int address, byte data)
+        {
+            ram[address] = data;
+        }
+
+        public static byte[] ReadWord(int adress)
+        {
+            return new byte[] { ram[adress], ram[adress+1] };
+        }
+
+        public static void WriteWord(int address, byte[] data)
+        {
+            ram[address] = data[0];
+            ram[address+1] = data[1];
+        }
+
     }
 
     public class Datasheet
@@ -186,7 +198,7 @@ namespace MicroCore
             OpDictString.Add("$", 0x24);
             OpDictString.Add("*", 0x4C);
             OpDictString.Add("<", 0x4D);
-            OpDictString.Add(">", 0x4E);
+            OpDictString.Add(">", 0x3E);
             OpDictString.Add(" ", 0x20);
         }
 
@@ -213,6 +225,4 @@ namespace MicroCore
             return String.Format("{0:x2}", (uint)System.Convert.ToUInt16(var)).ToUpper();
         }
     }
-
-
 }

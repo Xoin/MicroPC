@@ -51,6 +51,10 @@ namespace MicroAPI
                             Register.Write(3, 0x00);
                         }
                         break;
+                    // newline
+                    case 5:
+                        Console.Write("\n");
+                        break;
 
                 }
 
@@ -67,7 +71,6 @@ namespace MicroAPI
                 byte mem = RAM.ram[x];
                 if (mem == 0x24)
                 {
-                    Console.Write("\n");
                     x = RAM.ram.Length + 1;
                 }
                 else

@@ -29,7 +29,12 @@ namespace MicroCompiler
             return content;
         }
 
-        public static void Write(string file_l, byte[] bytes)
+        public static void WriteFile(string file_l, string file)
+        {
+            File.WriteAllText(file_l, file);
+        }
+
+        public static void WriteBytes(string file_l, byte[] bytes)
         {
             File.WriteAllBytes(file_l, bytes);
         }
